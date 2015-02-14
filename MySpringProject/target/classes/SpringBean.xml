@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id = "redCar" class="ua.com.maverick.Red"/>
+	<bean id = "blueCar" class="ua.com.maverick.Blue"/>
+	<bean id = "whiteCar" class="ua.com.maverick.White"/>
+	<bean id="taxist" class="ua.com.maverick.Taxi">
+		<property name = "driverName" value = "Bond"/>
+		<constructor-arg value = "Toyota"/>
+		<constructor-arg ref = "redCar"/>
+		<property name = "colours">
+			<list>
+				<ref bean = "redCar"/>
+				<ref bean = "blueCar"/>
+				<ref bean = "whiteCar"/>
+			</list>
+		</property>			
+	</bean>
+</beans>
